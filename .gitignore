@@ -6,5 +6,5 @@ a.py # for testing
 *.sqlite3 # sqlite database
 /diary/migrations/*.py # migrations
 /diary/helpers/credentials/*.* # credentials
-/staticfiles/
+/staticfiles/ # static files
 
