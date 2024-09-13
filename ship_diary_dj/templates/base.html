@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Ship Log" %}</title>
+    <link rel="stylesheet" href="{% static 'diary/css/page_style.css' %}">
+</head>
+<body>
+    <div class="grid-container_custom">
+        <div class="header_custom" style="background-image: url('{% static 'diary/images/log_book.webp' %}')">
+<div class="name_plate">
+    {% if user.is_authenticated %}
+        <h3>{% trans "User:" %} {{ user.email }}</h3>
+    {% else %}
+        <h3>{% trans "User: Unknown"%}</h3>
+    {% endif %}
+</div>
+            <div class="container_custom_for_text">
+                <div class="text_box_custom">
+                    <h1>{% trans "Welcome to Ship Diary" %}</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu">
+            <nav>
+                <ul>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'diary:user_home' %}">{% trans "Home" %}</a></li>
+                    <li><a href="{% url 'diary:logout' %}">{% trans "Log Out" %}</a></li>
+                        <li><a href="{% url 'diary:records' %}">{% trans "Records 'n' Notes" %}</a></li>
+                    {% else %}
+                    <li><a href="{% url 'diary:index' %}">{% trans "Home" %}</a></li>
+                    <li><a href="{% url 'diary:login' %}">{% trans "Login" %}</a></li>
+                    <li><a href="{% url 'diary:register' %}">{% trans "Register" %}</a></li>
+                    {%  endif %}
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main">
+        <h1>main contentas</h1>
+            {% block content %}
+
+            {% endblock %}
+        </div>
+
+        <div class="right">
+            <!-- Right column content -->
+        </div>
+
+        <div class="footer_custom">
+            <p>{% trans "© 2024 Ship Diary by TFS. All rights reserved." %}</p>
+        </div>
+    </div>
+
+    <!-- Language switcher form -->
+ <form class="form_language_change" action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="{{ redirect_to }}"/>
+        <select name="language" onchange="this.form.submit()">
+          {% load static %}
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% for lang in LANGUAGES %}
+          <option value="{{ lang.0 }}" {% if lang.0 ==  LANGUAGE_CODE %} selected="selected" {% endif %}>
+            {{ lang.1 }}
+          </option>
+          {% endfor %}
+        </select>
+      </form>
+</body>
+</html>

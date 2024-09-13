@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{%  load i18n %}
+{% block content %}
+<hr>
+    <h1>{% trans "Register" %}</h1>
+
+
+<div class="register_box">
+    <h2>{% trans "Register" %}</h2>
+    <form method="post">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div class="user-box">
+                {{ field }}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            </div>
+        {% endfor %}
+
+        {% if form.errors %}
+            <div class="error-messages" style="color: #ff0000;">
+                {{ form.errors }}
+            </div>
+        {% endif %}
+
+        <button type="submit">{% trans "Register" %}</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans "Add Ship" %}</h1>
+<hr>
+<div class="form_container_custom_">
+<h3>input ship data</h3>
+    <form method="post">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div class="form_field_custom">
+                <label for="{{ field.id_for_label }}">{{ field.label }}:</label>
+                {{ field }}
+                {% if field.help_text %}
+                    <small class="help-text">{{ field.help_text }}</small>
+                {% endif %}
+                {% if field.errors %}
+                    <div class="error_message_form_field">
+                        {% for error in field.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <button type="submit" class="submit_button_form_field">{% trans "Submit" %}</button>
+    </form>
+</div>
+<hr>
+{% endblock %}

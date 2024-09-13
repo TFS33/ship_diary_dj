@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+
+
+<h1>Weather for {{ location }}</h1>
+
+    <p>client location {{ client_location }}</p>
+    <p>{{ get_lock }}</p>
+    <p>{{ get_w }}</p>
+
+{#{% if weather.error %}#}
+{#    <p>Error: {{ weather.error }}</p>#}
+{#{% else %}#}
+{#    <!-- Display your weather data here -->#}
+{#    <p>Temperature: {{ weather.temperature }}°C</p>#}
+{#    <p>Condition: {{ weather.condition }}</p>#}
+{#    <!-- Add more weather details as needed -->#}
+{#{% endif %}#}
+
+{% endblock %}
+
+

@@ -1,0 +1,10 @@
+/.venv
+mailgun.py # for mailgun integration api key
+ship_diary_dj.code-workspace # for vscode
+a.py # for testing
+*.json # google credentials
+*.sqlite3 # sqlite database
+/diary/migrations/*.py # migrations
+/diary/helpers/credentials/*.* # credentials
+/staticfiles/
+

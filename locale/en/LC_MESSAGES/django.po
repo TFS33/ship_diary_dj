@@ -1,0 +1,255 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-28 21:10+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\diary\forms.py:27
+msgid "password"
+msgstr ""
+
+#: .\diary\forms.py:28
+msgid "confirm_password"
+msgstr ""
+
+#: .\diary\forms.py:31
+msgid "Passwords do not match"
+msgstr ""
+
+#: .\diary\managers.py:12
+msgid "The Email must be set"
+msgstr ""
+
+#: .\diary\managers.py:28
+msgid "Superuser must have is_staff=True."
+msgstr ""
+
+#: .\diary\managers.py:30
+msgid "Superuser must have is_superuser=True."
+msgstr ""
+
+#: .\diary\models.py:12
+msgid "email address"
+msgstr ""
+
+#: .\diary\models.py:13
+msgid "username"
+msgstr ""
+
+#: .\diary\models.py:14
+msgid "first name"
+msgstr ""
+
+#: .\diary\models.py:15
+msgid "last name"
+msgstr ""
+
+#: .\diary\models.py:16
+msgid "date joined"
+msgstr ""
+
+#: .\diary\models.py:17
+msgid "language"
+msgstr ""
+
+#: .\diary\models.py:20
+msgid "staff status"
+msgstr ""
+
+#: .\diary\models.py:22
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: .\diary\models.py:25
+msgid "active"
+msgstr ""
+
+#: .\diary\models.py:28
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: .\diary\models.py:51
+msgid "Name"
+msgstr ""
+
+#: .\diary\models.py:52 .\diary\templates\diary\ship.html:13
+msgid "Type"
+msgstr ""
+
+#: .\diary\models.py:71
+msgid "Ship"
+msgstr ""
+
+#: .\diary\models.py:74
+msgid "Notes"
+msgstr ""
+
+#: .\diary\models.py:85
+msgid "Hours Operated"
+msgstr ""
+
+#: .\diary\models.py:88
+msgid "Fuel Consumed"
+msgstr ""
+
+#: .\diary\models.py:90
+msgid "Maintenance Notes"
+msgstr ""
+
+#: .\diary\templates\diary\index.html:5 .\diary\templates\diary\ship.html:6
+#: .\diary\templates\diary\user_home.html:18
+msgid "Welcome"
+msgstr ""
+
+#: .\diary\templates\diary\login.html:7 .\diary\templates\diary\login.html:24
+#: .\ship_diary_dj\templates\base.html:36
+msgid "Login"
+msgstr ""
+
+#: .\diary\templates\diary\records.html:5
+#: .\ship_diary_dj\templates\base.html:33
+msgid "Records 'n' Notes"
+msgstr ""
+
+#: .\diary\templates\diary\register.html:5
+#: .\diary\templates\diary\register.html:9
+#: .\diary\templates\diary\register.html:26
+#: .\ship_diary_dj\templates\base.html:37
+msgid "Register"
+msgstr ""
+
+#: .\diary\templates\diary\ship.html:9
+msgid "Your Ships"
+msgstr ""
+
+#: .\diary\templates\diary\ship.html:14
+msgid "Year Built"
+msgstr ""
+
+#: .\diary\templates\diary\ship.html:18
+msgid "You don't have any ships yet."
+msgstr ""
+
+#: .\diary\templates\diary\user_home.html:7
+msgid "SHIP"
+msgstr ""
+
+#: .\diary\templates\diary\user_home.html:8
+msgid "LOG ENTRY"
+msgstr ""
+
+#: .\diary\templates\diary\user_home.html:9
+msgid "ENGINE"
+msgstr ""
+
+#: .\diary\templates\diary\user_home.html:10
+msgid "FUEL"
+msgstr ""
+
+#: .\diary\templates\diary\user_home.html:11
+msgid "NAVI"
+msgstr ""
+
+#: .\diary\templates\diary\user_home.html:12
+msgid "CREW"
+msgstr ""
+
+#: .\diary\templates\diary\user_home.html:13
+msgid "WEATHER"
+msgstr ""
+
+#: .\diary\templates\diary\user_home.html:14
+msgid "MAINTENANCE"
+msgstr ""
+
+#: .\diary\templates\diary\user_home.html:17
+msgid "User home page"
+msgstr ""
+
+#: .\diary\templates\diary\user_home.html:19
+msgid "Email"
+msgstr ""
+
+#: .\diary\templates\diary\user_home.html:20
+msgid "First Name"
+msgstr ""
+
+#: .\diary\templates\diary\user_home.html:21
+msgid "Last Name"
+msgstr ""
+
+#: .\diary\urls.py:9
+msgid "register/"
+msgstr ""
+
+#: .\diary\urls.py:10
+msgid "user_home/"
+msgstr ""
+
+#: .\diary\urls.py:11
+msgid "login/"
+msgstr ""
+
+#: .\diary\urls.py:12
+msgid "logout/"
+msgstr ""
+
+#: .\diary\urls.py:13
+msgid "records/"
+msgstr ""
+
+#: .\diary\urls.py:14
+msgid "ship/"
+msgstr ""
+
+#: .\ship_diary_dj\settings.py:65
+msgid "English"
+msgstr ""
+
+#: .\ship_diary_dj\settings.py:66
+msgid "Lithuanian"
+msgstr ""
+
+#: .\ship_diary_dj\templates\base.html:8
+msgid "Ship Log"
+msgstr ""
+
+#: .\ship_diary_dj\templates\base.html:16
+msgid "User:"
+msgstr ""
+
+#: .\ship_diary_dj\templates\base.html:22
+msgid "Welcome to Ship Diary"
+msgstr ""
+
+#: .\ship_diary_dj\templates\base.html:31
+#: .\ship_diary_dj\templates\base.html:35
+msgid "Home"
+msgstr ""
+
+#: .\ship_diary_dj\templates\base.html:32
+msgid "Log Out"
+msgstr ""
+
+#: .\ship_diary_dj\templates\base.html:55
+msgid "© 2024 Ship Diary by TFS. All rights reserved."
+msgstr ""
+
+#: .\ship_diary_dj\urls.py:32
+msgid "admin/"
+msgstr ""

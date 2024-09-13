@@ -1,0 +1,472 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: indigo;
+}
+
+.grid-container_custom {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header header"
+        "menu main right"
+        "footer footer footer";
+    gap: 5px;
+    padding: 10px;
+    flex-grow: 1;
+
+}
+
+.header_custom {
+    grid-area: header;
+    background-color: rgba(23, 2, 2, 0.64);
+    padding: 20px;
+    text-align: center;
+    border-style: double;
+    border-radius: 5px;
+}
+
+.container_custom_for_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: rgba(218, 213, 195, 0.14);
+    border-radius: 5px;
+}
+
+.text_box_custom {
+    background-color: rgba(197, 182, 150, 0.4);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    align-content: center;
+    position: relative;
+    top : -50%;
+
+}
+
+/* style for h1 letters */
+.text_box_custom h1 {
+    margin: 0;
+    text-align: center;
+    color: #1d1140;
+    font-family: "Bookman Old Style";
+}
+
+.menu {
+    grid-area: menu;
+    background-color: #e0e0e0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.menu a {
+    display: block;
+    padding: 5px;
+    text-decoration: #0c0a0a;
+    color: #4b0082;
+    font-family: "Bookman Old Style";
+    font-style: italic;
+}
+
+.menu a:hover {
+    background-color: #ccc;
+}
+
+.main {
+    grid-area: main;
+    background-color: rgb(251, 251, 251);
+    padding: 10px;
+}
+
+.right {
+    grid-area: right;
+    background-color: rgb(248, 96, 0);
+    padding: 5px;
+}
+
+.footer_custom {
+    grid-area: footer;
+    background-color: rgba(33, 19, 80, 0.56);
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.footer_custom p {
+    margin: 0;
+    color: #fff;
+    font-family: "Bookman Old Style";
+}
+
+
+.grid-container_custom > * {
+    border: 2px solid #ccc;
+}
+
+.form_language_change {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000; /* above other elements */
+}
+
+.form_language_change :hover {
+    cursor: pointer;
+    box-shadow: indigo 0 0 10px,
+                indigo 0 10px 40px,
+                #9669e6 0 0 100px;
+
+}
+
+.form_language_change select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #fafafa;
+    background-color: #e5ca9e;
+    font-family: "Bookman Old Style";
+    font-size: 14px;
+}
+
+.register_box {
+        width: 100%;
+        max-width: 400px;
+        padding: 40px;
+        margin: 20px auto;
+        background: rgba(0,0,0,.5);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0,0,0,.6);
+        border-radius: 10px;
+    }
+
+.register_box h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: #fff;
+        text-align: center;
+    }
+
+.register_box .user-box {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+.register_box .user-box input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+    }
+
+.register_box .user-box label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        pointer-events: none;
+        transition: .5s;
+    }
+
+.register_box .user-box input:focus ~ label,
+.register_box .user-box input:valid ~ label {
+        top: -20px;
+        left: 0;
+        color: #03e9f4;
+        font-size: 12px;
+    }
+
+.register_box form button {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: #03e9f4;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: .5s;
+        margin-top: 40px;
+        letter-spacing: 4px;
+        background: transparent;
+        border: 2px solid #03e9f4;
+        cursor: pointer;
+    }
+
+.register_box form button:hover {
+        background: #03e9f4;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #03e9f4,
+                    0 0 25px #03e9f4,
+                    0 0 50px #03e9f4,
+                    0 0 100px #03e9f4;
+    }
+
+.container {
+    display: inline-flex;
+}
+
+.name_plate {
+    position: sticky;
+    top : 0;
+    left : 0;
+    width: 140px;
+    height: 60px;
+    padding: 10px;
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 5px;
+    margin: 10px;
+    font-family: "Bookman Old Style";
+}
+
+.name_plate h3 {
+    text-align: center;
+    font-size: 10px;
+    color: #fbfbfb;
+}
+
+.name_plate:hover {
+    cursor: pointer;
+    box-shadow:  0 0 10px #9669e6;
+}
+
+
+
+
+.button_ship {
+    color: white;
+    background: linear-gradient(135deg, transparent 10px, #0d1c32 0) no-repeat;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1.5;
+    min-width: 120px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.button_logentry {
+    color: white;
+    background: linear-gradient(135deg, transparent 10px, #0d1c32 0) no-repeat;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1.5;
+    min-width: 120px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.button_engine {
+    color: white;
+    background: linear-gradient(135deg, transparent 10px, #0d1c32 0) no-repeat;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1.5;
+    min-width: 120px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.button_fuel {
+    color: white;
+    background: linear-gradient(135deg, transparent 10px, #0d1c32 0) no-repeat;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1.5;
+    min-width: 120px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.button_navigation {
+    color: white;
+    background: linear-gradient(135deg, transparent 10px, #0d1c32 0) no-repeat;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1.5;
+    min-width: 120px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.button_crew {
+    color: white;
+    background: linear-gradient(135deg, transparent 10px, #0d1c32 0) no-repeat;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1.5;
+    min-width: 120px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.button_weather {
+    color: white;
+    background: linear-gradient(135deg, transparent 10px, #0d1c32 0) no-repeat;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1.5;
+    min-width: 120px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.button_maintenance {
+    color: white;
+    background: linear-gradient(135deg, transparent 10px, #0d1c32 0) no-repeat;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1.5;
+    min-width: 120px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*.container_center {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-items: center;*/
+/*    width: 100%;*/
+/*}*/
+
+.container_center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.form_container_custom_ {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 75%;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #160d37;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px -5px rgb(150, 105, 230);
+}
+
+.form_container_custom_ h3 {
+    color: whitesmoke;
+    font-family: "Bookman Old Style";
+    text-align: center;
+}
+
+
+.form_field_custom {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form_field_custom label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: "Bookman Old Style";
+}
+
+.form_field_custom input,
+.form_field_custom select,
+.form_field_custom textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #350766;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #121b32;
+    font-family: "Bookman Old Style";
+    background-color: #f0f0f0;
+}
+
+.help-text {
+    display: block;
+    font-size: 12px;
+    color: #a0aec0;
+    margin-top: 5px;
+}
+
+.error_message_form_field {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.submit_button_form_field {
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(107, 70, 193, 0.48);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+.submit_button_form_field:hover {
+    background-color: #553c9a;
+}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <hr>
+    <a href="{% url 'diary:add_ship' %}" >ADD SHIP</a>
+<hr>
+    <h1>{% trans "Welcome" %}</h1>
+
+    {% if ship_data %}
+        <h2>{% trans "Your Ships" %}</h2>
+        {% for ship in ship_data %}
+            <div class="ship">
+                <h3>{{ ship.name }}</h3>
+                <p>{% trans "Type" %}: {{ ship.type }}</p>
+                <p>{% trans "Year Built" %}: {{ ship.year_built|default:"Unknown" }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>{% trans "You don't have any ships yet." %}</p>
+    {% endif %}
+<hr>
+{% endblock %}
