@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-28 21:10+0300\n"
+"POT-Creation-Date: 2024-10-10 14:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,181 +19,796 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
 "11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
 "1 : n % 1 != 0 ? 2: 3);\n"
-#: .\diary\forms.py:27
-msgid "password"
-msgstr ""
-
-#: .\diary\forms.py:28
-msgid "confirm_password"
-msgstr ""
 
 #: .\diary\forms.py:31
+msgid "password"
+msgstr "slaptažodis"
+
+#: .\diary\forms.py:32
+msgid "confirm_password"
+msgstr "patvirtinti slaptažodį"
+
+#: .\diary\forms.py:35
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Slaptažodžiai nesutampa"
 
 #: .\diary\managers.py:12
 msgid "The Email must be set"
-msgstr ""
+msgstr "El. paštas privalomas"
 
 #: .\diary\managers.py:28
 msgid "Superuser must have is_staff=True."
-msgstr ""
+msgstr "Adminas turi būti nustatytas - is_staff=True"
 
 #: .\diary\managers.py:30
 msgid "Superuser must have is_superuser=True."
-msgstr ""
+msgstr "Adminas turi būti nustatytas - is_superuser=True"
 
-#: .\diary\models.py:12
+#: .\diary\models.py:24
 msgid "email address"
-msgstr ""
-
-#: .\diary\models.py:13
-msgid "username"
-msgstr ""
-
-#: .\diary\models.py:14
-msgid "first name"
-msgstr ""
-
-#: .\diary\models.py:15
-msgid "last name"
-msgstr ""
-
-#: .\diary\models.py:16
-msgid "date joined"
-msgstr ""
-
-#: .\diary\models.py:17
-msgid "language"
-msgstr ""
-
-#: .\diary\models.py:20
-msgid "staff status"
-msgstr ""
-
-#: .\diary\models.py:22
-msgid "Designates whether the user can log into this admin site."
-msgstr ""
+msgstr "el. paštas"
 
 #: .\diary\models.py:25
-msgid "active"
-msgstr ""
+msgid "username"
+msgstr "vartotojo vardas"
+
+#: .\diary\models.py:26
+msgid "first name"
+msgstr "vardas"
+
+#: .\diary\models.py:27
+msgid "last name"
+msgstr "pavardė"
 
 #: .\diary\models.py:28
+msgid "date joined"
+msgstr "prisijungimo data"
+
+#: .\diary\models.py:30
+msgid "language"
+msgstr "kalba"
+
+#: .\diary\models.py:37
+msgid "staff status"
+msgstr "moderatoriaus statusas"
+
+#: .\diary\models.py:39
+msgid "Designates whether the user can log into this admin site."
+msgstr "Nustato ar vartotuojas gali prisijungti prie admin dalies"
+
+#: .\diary\models.py:42
+msgid "active"
+msgstr "aktyvus"
+
+#: .\diary\models.py:45
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
-msgstr ""
+msgstr "Nustato ar šis vartotojas aktyvus"
 
-#: .\diary\models.py:51
+#: .\diary\models.py:68
 msgid "Name"
-msgstr ""
+msgstr "Pavadinimas"
 
-#: .\diary\models.py:52 .\diary\templates\diary\ship.html:13
+#: .\diary\models.py:69 .\diary\templates\diary\ship.html:15
 msgid "Type"
-msgstr ""
+msgstr "Tipas"
 
-#: .\diary\models.py:71
+#: .\diary\models.py:94
 msgid "Ship"
-msgstr ""
+msgstr "Laivas"
 
-#: .\diary\models.py:74
+#: .\diary\models.py:98
 msgid "Notes"
-msgstr ""
+msgstr "Užrašai"
 
-#: .\diary\models.py:85
+#: .\diary\models.py:109 .\diary\templates\diary\engine_log_list.html:17
 msgid "Hours Operated"
-msgstr ""
+msgstr "Dirbta valandų"
 
-#: .\diary\models.py:88
+#: .\diary\models.py:112 .\diary\templates\diary\engine_log_list.html:18
+#: .\diary\templates\diary\fuel_log_list.html:18
 msgid "Fuel Consumed"
-msgstr ""
+msgstr "Sunaudota kuro"
 
-#: .\diary\models.py:90
+#: .\diary\models.py:114 .\diary\templates\diary\engine_log_list.html:19
 msgid "Maintenance Notes"
-msgstr ""
+msgstr "Priežiūros Užrašai"
 
-#: .\diary\templates\diary\index.html:5 .\diary\templates\diary\ship.html:6
-#: .\diary\templates\diary\user_home.html:18
+#: .\diary\templates\diary\add_crew_log.html:6
+msgid "Add Crew Entry"
+msgstr "Pridėti įgulos įrašus"
+
+#: .\diary\templates\diary\add_crew_log.html:8
+#: .\diary\templates\diary\add_engine_log.html:8
+#: .\diary\templates\diary\add_fuel_log.html:8
+#: .\diary\templates\diary\add_log_entry.html:8
+#: .\diary\templates\diary\add_maintenance_log.html:8
+#: .\diary\templates\diary\add_navi_log.html:8
+#: .\diary\templates\diary\add_ship.html:8
+#: .\diary\templates\diary\add_weather_log.html:8
+#: .\diary\templates\diary\edit_crew_log.html:8
+#: .\diary\templates\diary\edit_engine_log.html:8
+#: .\diary\templates\diary\edit_fuel_log.html:8
+#: .\diary\templates\diary\edit_log.html:8
+#: .\diary\templates\diary\edit_maintenance_log.html:8
+#: .\diary\templates\diary\edit_navi_log.html:8
+#: .\diary\templates\diary\edit_ship.html:8
+#: .\diary\templates\diary\edit_weather_log.html:8
+msgid "Back"
+msgstr "Atgal"
+
+#: .\diary\templates\diary\add_crew_log.html:33
+#: .\diary\templates\diary\add_engine_log.html:33
+#: .\diary\templates\diary\add_fuel_log.html:33
+#: .\diary\templates\diary\add_log_entry.html:33
+#: .\diary\templates\diary\add_maintenance_log.html:33
+#: .\diary\templates\diary\add_navi_log.html:33
+#: .\diary\templates\diary\add_ship.html:33
+#: .\diary\templates\diary\add_weather_log.html:33
+#: .\diary\templates\diary\edit_crew_log.html:33
+#: .\diary\templates\diary\edit_engine_log.html:33
+#: .\diary\templates\diary\edit_fuel_log.html:33
+#: .\diary\templates\diary\edit_log.html:33
+#: .\diary\templates\diary\edit_maintenance_log.html:33
+#: .\diary\templates\diary\edit_navi_log.html:33
+#: .\diary\templates\diary\edit_ship.html:33
+#: .\diary\templates\diary\edit_weather_log.html:33
+#: .\diary\templates\diary\marine.html:86
+msgid "Submit"
+msgstr "Patvirtinti"
+
+#: .\diary\templates\diary\add_engine_log.html:6
+msgid "Add Engine Log"
+msgstr "Pridėti variklio įrašus"
+
+#: .\diary\templates\diary\add_fuel_log.html:6
+msgid "Add Fuel Log"
+msgstr "Pridėti kuro įrašus"
+
+#: .\diary\templates\diary\add_log_entry.html:6
+msgid "Add Log Entry"
+msgstr "Pridėti įrašus"
+
+#: .\diary\templates\diary\add_maintenance_log.html:6
+msgid "Add Maintenance Entry"
+msgstr "Pridėti apžiūros įrašus"
+
+#: .\diary\templates\diary\add_navi_log.html:6
+msgid "Add Navi Entry"
+msgstr "Pridėti navigacijos įrašus"
+
+#: .\diary\templates\diary\add_ship.html:6
+msgid "Add Ship"
+msgstr "Pridėti laivą"
+
+#: .\diary\templates\diary\add_weather_log.html:6
+msgid "Add Weather Entry"
+msgstr "Pridėti orologinius įrašus"
+
+#: .\diary\templates\diary\astronomy.html:5
+msgid "Astronomy Information"
+msgstr "Astrologinė informacija"
+
+#: .\diary\templates\diary\astronomy.html:8
+#: .\diary\templates\diary\marine.html:49
+msgid "Moon Phase"
+msgstr "Mėnulio fazė"
+
+#: .\diary\templates\diary\astronomy.html:9
+#: .\diary\templates\diary\marine.html:50
+msgid "Moon Illumination"
+msgstr "Mėnulio iliuminacija"
+
+#: .\diary\templates\diary\astronomy.html:10
+msgid "Region"
+msgstr "Regionas"
+
+#: .\diary\templates\diary\astronomy.html:11
+#: .\diary\templates\diary\marine.html:45
+#: .\diary\templates\diary\weather_api_list.html:28
+msgid "Sunrise"
+msgstr "Saulėtekis"
+
+#: .\diary\templates\diary\astronomy.html:11
+#: .\diary\templates\diary\marine.html:46
+#: .\diary\templates\diary\weather_api_list.html:29
+msgid "Sunset"
+msgstr "Saulėlydis"
+
+#: .\diary\templates\diary\astronomy.html:12
+#: .\diary\templates\diary\marine.html:47
+#: .\diary\templates\diary\weather_api_list.html:30
+msgid "Moonrise"
+msgstr "Mėnulio patekėjimas"
+
+#: .\diary\templates\diary\astronomy.html:12
+#: .\diary\templates\diary\marine.html:48
+#: .\diary\templates\diary\weather_api_list.html:31
+msgid "Moonset"
+msgstr "Mėnulio nusileidimas"
+
+#: .\diary\templates\diary\astronomy.html:14
+#: .\diary\templates\diary\weather.html:19
+msgid "Error"
+msgstr "Klaida"
+
+#: .\diary\templates\diary\astronomy.html:16
+msgid "No current data."
+msgstr "Jokios informacijos."
+
+#: .\diary\templates\diary\crew_log_list.html:9
+#: .\diary\templates\diary\engine_log_list.html:9
+#: .\diary\templates\diary\fuel_log_list.html:9
+#: .\diary\templates\diary\index.html:22
+#: .\diary\templates\diary\log_list.html:9
+#: .\diary\templates\diary\maintenance_log_list.html:9
+#: .\diary\templates\diary\navi_log_list.html:9
+#: .\diary\templates\diary\ship.html:8
+#: .\diary\templates\diary\user_home.html:81
+#: .\diary\templates\diary\weather_log_list.html:9
 msgid "Welcome"
-msgstr ""
+msgstr "Sveiki"
 
-#: .\diary\templates\diary\login.html:7 .\diary\templates\diary\login.html:24
-#: .\ship_diary_dj\templates\base.html:36
+#: .\diary\templates\diary\crew_log_list.html:12
+msgid "Your Crew Logs"
+msgstr "Įgulos įrašai"
+
+#: .\diary\templates\diary\crew_log_list.html:17
+msgid "Crew count"
+msgstr "Įgulos kiekis"
+
+#: .\diary\templates\diary\crew_log_list.html:18
+msgid "Crew changes"
+msgstr "Įgulos pakeitimai"
+
+#: .\diary\templates\diary\crew_log_list.html:19
+#: .\diary\templates\diary\engine_log_list.html:20
+#: .\diary\templates\diary\fuel_log_list.html:20
+#: .\diary\templates\diary\weather_api_list.html:12
+msgid "ID"
+msgstr "ID"
+
+#: .\diary\templates\diary\crew_log_list.html:25
+msgid "You don't have any crew logs yet."
+msgstr "Neturite įrašu įgulai."
+
+#: .\diary\templates\diary\edit_crew_log.html:6
+msgid "Edit Crew Log"
+msgstr "Redagauoti įgulos įrašus"
+
+#: .\diary\templates\diary\edit_engine_log.html:6
+msgid "Edit Engine Log"
+msgstr "Redagauoti variklio įrašus"
+
+#: .\diary\templates\diary\edit_fuel_log.html:6
+msgid "Edit Fuel Log"
+msgstr "Redagauoti kuro įrašus"
+
+#: .\diary\templates\diary\edit_log.html:6
+msgid "Edit Log Entry"
+msgstr "Redagauoti įrašus"
+
+#: .\diary\templates\diary\edit_maintenance_log.html:6
+msgid "Edit Maintenance Log"
+msgstr "Redagauoti priežiuros įrašus"
+
+#: .\diary\templates\diary\edit_navi_log.html:6
+msgid "Edit Navi Log"
+msgstr "Redagauoti navigacijos įrašus"
+
+#: .\diary\templates\diary\edit_ship.html:6
+msgid "Edit Ship"
+msgstr "Redaguoti laivo įrašus"
+
+#: .\diary\templates\diary\edit_weather_log.html:6
+msgid "Edit Weather Log"
+msgstr "Redaguoti oro sąlygų įrašus"
+
+#: .\diary\templates\diary\engine_log_list.html:12
+msgid "Your Engine Logs"
+msgstr "Jūsų variklio įrašai"
+
+#: .\diary\templates\diary\engine_log_list.html:26
+#: .\diary\templates\diary\log_list.html:23
+msgid "You don't have any logs yet."
+msgstr "Kolkas neturite įrašų."
+
+#: .\diary\templates\diary\forecast.html:16
+msgid "Date: "
+msgstr "Data:"
+
+#: .\diary\templates\diary\forecast.html:18
+msgid "Temperature status  --- / Minimal Temp"
+msgstr "Temperatūros būsena --- / Minimali Temperatūra"
+
+#: .\diary\templates\diary\forecast.html:18
+msgid "/ Maximal Temp"
+msgstr "/ Maksimali Temperatūra"
+
+#: .\diary\templates\diary\forecast.html:18
+msgid "/ Avarage Temp"
+msgstr "/ Vidutinė temperatūra"
+
+#: .\diary\templates\diary\forecast.html:20
+msgid "Wind status: "
+msgstr "Vėjo būsena: "
+
+#: .\diary\templates\diary\forecast.html:22
+msgid "Humidity: "
+msgstr "Drėgmė: "
+
+#: .\diary\templates\diary\forecast.html:24
+msgid "Sun status: "
+msgstr "Saulėtumo būsena: "
+
+#: .\diary\templates\diary\forecast.html:29
+msgid "No alerts available for now"
+msgstr "Šiuo metu nėra perspėjimų"
+
+#: .\diary\templates\diary\forecast.html:40
+msgid "No air quality data available for now"
+msgstr "Šiuo metu nėra oro kokybės duomenų"
+
+#: .\diary\templates\diary\fuel_log_list.html:12
+msgid "Your Fuel Logs"
+msgstr "Jūsų kuro įrašai"
+
+#: .\diary\templates\diary\fuel_log_list.html:17
+msgid "Current level"
+msgstr "Dabartinis kiekis"
+
+#: .\diary\templates\diary\fuel_log_list.html:19
+msgid "Refilled"
+msgstr "Papildytas kiekis"
+
+#: .\diary\templates\diary\fuel_log_list.html:26
+msgid "You don't have any logs for fuel yet."
+msgstr "Šiuo metu dar neturite įrašų kuro statusui."
+
+#: .\diary\templates\diary\get_all_ship_logs.html:24
+msgid "General Logs"
+msgstr "Bendri įrašai"
+
+#: .\diary\templates\diary\log_list.html:12
+#: .\diary\templates\diary\ship.html:11
+msgid "Your Ships"
+msgstr "Jūsų laivai"
+
+#: .\diary\templates\diary\log_list.html:16
+msgid "Note"
+msgstr "Pastabos"
+
+#: .\diary\templates\diary\log_list.html:17
+msgid "Time Stamp"
+msgstr "Laiko įrašas"
+
+#: .\diary\templates\diary\login.html:33 .\diary\templates\diary\login.html:50
+#: .\ship_diary_dj\templates\base.html:37
 msgid "Login"
+msgstr "Prisijungimas"
+
+#: .\diary\templates\diary\maintenance_log_list.html:12
+msgid "Your Maintenance Logs"
+msgstr "Jūsų priežiuros įrašai"
+
+#: .\diary\templates\diary\maintenance_log_list.html:17
+msgid "Equipment"
+msgstr "Įranga/įrankiai"
+
+#: .\diary\templates\diary\maintenance_log_list.html:18
+msgid "Work done"
+msgstr "Atlikti darbai"
+
+#: .\diary\templates\diary\maintenance_log_list.html:19
+msgid "Hours worked"
+msgstr "Įšdirbta valandų"
+
+#: .\diary\templates\diary\maintenance_log_list.html:20
+msgid "Minutes worked"
+msgstr "Įšdirbta minučių"
+
+#: .\diary\templates\diary\maintenance_log_list.html:21
+msgid "Next service"
+msgstr "Kita apžiūra"
+
+#: .\diary\templates\diary\maintenance_log_list.html:27
+msgid "You don't have any logs yet for maintenance."
+msgstr "Kolokas neturite apžiūros įrašų."
+
+#: .\diary\templates\diary\marine.html:11
+msgid "Marine Forecast"
+msgstr "Vandens kelių prognozė"
+
+#: .\diary\templates\diary\marine.html:22
+msgid "Weather for"
+msgstr "Oro sąlygos"
+
+#: .\diary\templates\diary\marine.html:23
+#: .\diary\templates\diary\navi_log_list.html:17
+#: .\diary\templates\diary\weather.html:15
+#: .\diary\templates\diary\weather_api_list.html:17
+msgid "Latitude"
+msgstr "Platuma"
+
+#: .\diary\templates\diary\marine.html:23
+#: .\diary\templates\diary\navi_log_list.html:18
+#: .\diary\templates\diary\weather.html:16
+#: .\diary\templates\diary\weather_api_list.html:18
+msgid "Longitude"
+msgstr "Ilguma"
+
+#: .\diary\templates\diary\marine.html:24
+#: .\diary\templates\diary\weather.html:23
+msgid "Local Time"
+msgstr "Vietinis laikas"
+
+#: .\diary\templates\diary\marine.html:24
+msgid "Time Zone"
+msgstr "Laiko zona"
+
+#: .\diary\templates\diary\marine.html:26
+#: .\diary\templates\diary\weather_backup.html:23
+msgid "Forecast"
+msgstr "Prognozė"
+
+#: .\diary\templates\diary\marine.html:29
+#: .\diary\templates\diary\weather_api_list.html:13
+msgid "Date"
+msgstr "Data"
+
+#: .\diary\templates\diary\marine.html:29
+msgid "Epoch"
+msgstr "Epocha"
+
+#: .\diary\templates\diary\marine.html:31
+msgid "Weather"
+msgstr "Oras"
+
+#: .\diary\templates\diary\marine.html:32
+#: .\diary\templates\diary\weather.html:24
+#: .\diary\templates\diary\weather_log_list.html:17
+msgid "Temperature"
+msgstr "Temperatūra"
+
+#: .\diary\templates\diary\marine.html:33
+msgid "Min"
+msgstr "Minimali"
+
+#: .\diary\templates\diary\marine.html:34
+msgid "Max"
+msgstr "Maksimali"
+
+#: .\diary\templates\diary\marine.html:35
+msgid "Average"
+msgstr "Vidutinė"
+
+#: .\diary\templates\diary\marine.html:37
+#: .\diary\templates\diary\weather.html:26
+msgid "Wind"
+msgstr "Vėjas"
+
+#: .\diary\templates\diary\marine.html:38
+msgid "Precipitation"
+msgstr "Kritulai"
+
+#: .\diary\templates\diary\marine.html:39
+msgid "Snow"
+msgstr "Sniegas"
+
+#: .\diary\templates\diary\marine.html:40
+msgid "Visibility"
+msgstr "Matomumas"
+
+#: .\diary\templates\diary\marine.html:41
+#: .\diary\templates\diary\weather.html:27
+msgid "Humidity"
+msgstr "Drėgmės kiekis"
+
+#: .\diary\templates\diary\marine.html:42
+#: .\diary\templates\diary\weather_api_list.html:27
+msgid "UV Index"
+msgstr "UV Indeksas"
+
+#: .\diary\templates\diary\marine.html:44
+msgid "Astronomical Data"
+msgstr "Astronomijos duomenys"
+
+#: .\diary\templates\diary\marine.html:51
+msgid "Moon Up"
+msgstr "Mėnulis pakilęs"
+
+#: .\diary\templates\diary\marine.html:51
+#: .\diary\templates\diary\marine.html:52
+msgid "Yes"
+msgstr "Taip"
+
+#: .\diary\templates\diary\marine.html:51
+#: .\diary\templates\diary\marine.html:52
+msgid "No"
+msgstr "Ne"
+
+#: .\diary\templates\diary\marine.html:52
+msgid "Sun Up"
+msgstr "Pakilus saulė"
+
+#: .\diary\templates\diary\marine.html:59
+msgid "Save This Forecast"
 msgstr ""
 
-#: .\diary\templates\diary\records.html:5
-#: .\ship_diary_dj\templates\base.html:33
-msgid "Records 'n' Notes"
-msgstr ""
+#: .\diary\templates\diary\navi_log_list.html:12
+msgid "Your Navi Logs"
+msgstr "Jūsų Navigacijos įrašai"
+
+#: .\diary\templates\diary\navi_log_list.html:19
+msgid "Speed"
+msgstr "Greitis"
+
+#: .\diary\templates\diary\navi_log_list.html:20
+msgid "Destination"
+msgstr "Tikslas"
+
+#: .\diary\templates\diary\navi_log_list.html:26
+msgid "You don't have any logs yet for navi."
+msgstr "Šiuo metu neturite navigacinių įrašų."
 
 #: .\diary\templates\diary\register.html:5
 #: .\diary\templates\diary\register.html:9
 #: .\diary\templates\diary\register.html:26
-#: .\ship_diary_dj\templates\base.html:37
+#: .\ship_diary_dj\templates\base.html:38
 msgid "Register"
-msgstr ""
+msgstr "Registracija"
 
-#: .\diary\templates\diary\ship.html:9
-msgid "Your Ships"
-msgstr ""
-
-#: .\diary\templates\diary\ship.html:14
+#: .\diary\templates\diary\ship.html:16
 msgid "Year Built"
-msgstr ""
+msgstr "Pastatytas metais"
 
-#: .\diary\templates\diary\ship.html:18
+#: .\diary\templates\diary\ship.html:22
 msgid "You don't have any ships yet."
-msgstr ""
-
-#: .\diary\templates\diary\user_home.html:7
-msgid "SHIP"
-msgstr ""
-
-#: .\diary\templates\diary\user_home.html:8
-msgid "LOG ENTRY"
-msgstr ""
-
-#: .\diary\templates\diary\user_home.html:9
-msgid "ENGINE"
-msgstr ""
-
-#: .\diary\templates\diary\user_home.html:10
-msgid "FUEL"
-msgstr ""
-
-#: .\diary\templates\diary\user_home.html:11
-msgid "NAVI"
-msgstr ""
-
-#: .\diary\templates\diary\user_home.html:12
-msgid "CREW"
-msgstr ""
+msgstr "Šiuo metu neturite laivų"
 
 #: .\diary\templates\diary\user_home.html:13
-msgid "WEATHER"
-msgstr ""
+msgid "SHIP"
+msgstr "LAIVAS"
 
 #: .\diary\templates\diary\user_home.html:14
+#: .\diary\templates\diary\user_home.html:23
+msgid "ADD"
+msgstr "PRIDĖTI"
+
+#: .\diary\templates\diary\user_home.html:22
+msgid "LOG ENTRY"
+msgstr "ĮRAŠAI"
+
+#: .\diary\templates\diary\user_home.html:30
+msgid "ADD ENGINE LOG"
+msgstr "PRIDĖTI VARIKLIO ĮRAŠUS"
+
+#: .\diary\templates\diary\user_home.html:31
+msgid "ENGINE"
+msgstr "VARIKLIS"
+
+#: .\diary\templates\diary\user_home.html:38
+msgid "ADD FUEL LOG"
+msgstr "PRIDĖTI KURO ĮRAŠUS"
+
+#: .\diary\templates\diary\user_home.html:39
+msgid "FUEL"
+msgstr "KURAS"
+
+#: .\diary\templates\diary\user_home.html:46
+msgid "NAVI LOGS"
+msgstr "NAVIGACINIAI ĮRAŠAI"
+
+#: .\diary\templates\diary\user_home.html:47
+msgid "ADD NAVI"
+msgstr "PRIDĖTI NAVIGACINIUS ĮRAŠUS"
+
+#: .\diary\templates\diary\user_home.html:54
+msgid "CREW Logs"
+msgstr "ĮGULOS ĮRAŠAI"
+
+#: .\diary\templates\diary\user_home.html:55
+msgid "ADD CREW"
+msgstr "PRIFĖTI ĮGULOS ĮRAŠUS"
+
+#: .\diary\templates\diary\user_home.html:63
 msgid "MAINTENANCE"
-msgstr ""
+msgstr "PRIEŽIŪRA"
 
-#: .\diary\templates\diary\user_home.html:17
+#: .\diary\templates\diary\user_home.html:64
+msgid "ADD MAINTENANCE LOG"
+msgstr "PRIDĖTI PRIEŽIUROS ĮRAŠUS"
+
+#: .\diary\templates\diary\user_home.html:71
+msgid "WEATHER"
+msgstr "ORO SĄLYGOS"
+
+#: .\diary\templates\diary\user_home.html:72
+msgid "ADD WEATHER LOG"
+msgstr "PRIDĖTI ORO SĄLYGŲ ĮRAŠUS"
+
+#: .\diary\templates\diary\user_home.html:75
+msgid "Calendar"
+msgstr "Kalendorius"
+
+#: .\diary\templates\diary\user_home.html:76
+msgid "Weather API"
+msgstr "Orų API"
+
+#: .\diary\templates\diary\user_home.html:80
 msgid "User home page"
-msgstr ""
+msgstr "Vartotojo namų puslapis"
 
-#: .\diary\templates\diary\user_home.html:19
+#: .\diary\templates\diary\user_home.html:82
 msgid "Email"
-msgstr ""
+msgstr "Elektroninis paštas"
 
-#: .\diary\templates\diary\user_home.html:20
+#: .\diary\templates\diary\user_home.html:83
 msgid "First Name"
+msgstr "Vardas"
+
+#: .\diary\templates\diary\user_home.html:84
+msgid "Last Name"
+msgstr "Pavardė"
+
+#: .\diary\templates\diary\weather.html:6
+#: .\diary\templates\diary\weather_backup.html:5
+msgid "Weather Information"
+msgstr "Oro sąlygos"
+
+#: .\diary\templates\diary\weather.html:8
+msgid "ASTRO"
+msgstr "ASTROLOGINIS"
+
+#: .\diary\templates\diary\weather.html:9
+msgid "FORECAST"
+msgstr "PROGNOZĖ"
+
+#: .\diary\templates\diary\weather.html:10
+msgid "MARINE"
+msgstr "JŪRINIS"
+
+#: .\diary\templates\diary\weather.html:13
+#: .\diary\templates\diary\weather.html:22
+msgid "Location"
+msgstr "Vieta"
+
+#: .\diary\templates\diary\weather.html:14
+msgid "City"
+msgstr "Miestas"
+
+#: .\diary\templates\diary\weather.html:21
+msgid "Current Weather"
+msgstr "Dabartinės oro sąlygos"
+
+#: .\diary\templates\diary\weather.html:25
+msgid "Condition"
+msgstr "Būsena"
+
+#: .\diary\templates\diary\weather.html:29
+msgid "no data."
+msgstr "nėra informacijos."
+
+#: .\diary\templates\diary\weather_api_list.html:7
+msgid "Saved Weather API Marine Data"
+msgstr "Išsaugota Orų API Jūriniai duomenys"
+
+#: .\diary\templates\diary\weather_api_list.html:14
+#, fuzzy
+#| msgid "last name"
+msgid "Location name"
+msgstr "pavardė"
+
+#: .\diary\templates\diary\weather_api_list.html:15
+msgid "Location region"
+msgstr "Vietos regionas"
+
+#: .\diary\templates\diary\weather_api_list.html:16
+msgid "Location country"
+msgstr "Vietos šalis"
+
+#: .\diary\templates\diary\weather_api_list.html:19
+msgid "Maximal temperature"
+msgstr "Aukščiausia temperatūra"
+
+#: .\diary\templates\diary\weather_api_list.html:20
+msgid "Minimal temperature"
+msgstr "Žemiausia temperatūra"
+
+#: .\diary\templates\diary\weather_api_list.html:21
+msgid "Average temperature"
+msgstr "Vidutinė temperatūra"
+
+#: .\diary\templates\diary\weather_api_list.html:22
+msgid "Maximal wind"
+msgstr "Didžiausias vėjo greitis"
+
+#: .\diary\templates\diary\weather_api_list.html:23
+msgid "Total precipitation"
+msgstr "Viso kritulių kiekis"
+
+#: .\diary\templates\diary\weather_api_list.html:24
+msgid "Total snow"
+msgstr "Viso sniego kiekis"
+
+#: .\diary\templates\diary\weather_api_list.html:25
+msgid "Average visibility"
+msgstr "Vidutinis matomumas"
+
+#: .\diary\templates\diary\weather_api_list.html:26
+msgid "Average humidity"
+msgstr "Vidutinė drėgmė"
+
+#: .\diary\templates\diary\weather_api_list.html:32
+#, fuzzy
+#| msgid "Moon Phase"
+msgid "Moon phase"
+msgstr "Mėnulio fazė"
+
+#: .\diary\templates\diary\weather_api_list.html:33
+msgid "Created"
+msgstr "Sukurta"
+
+#: .\diary\templates\diary\weather_api_list.html:70
+msgid "You don't have any saved logs yet."
 msgstr ""
 
-#: .\diary\templates\diary\user_home.html:21
-msgid "Last Name"
-msgstr ""
+#: .\diary\templates\diary\weather_backup.html:14
+msgid "Weather Data for"
+msgstr "Oro sąlygos "
+
+#: .\diary\templates\diary\weather_backup.html:18
+msgid "Other Weather Data"
+msgstr "Kiti oro sąlygų duomenys"
+
+#: .\diary\templates\diary\weather_backup.html:20
+msgid "Action"
+msgstr "Veiksmas"
+
+#: .\diary\templates\diary\weather_backup.html:22
+msgid "Realtime"
+msgstr "Dabartinės"
+
+#: .\diary\templates\diary\weather_backup.html:24
+msgid "Future"
+msgstr "Ateities"
+
+#: .\diary\templates\diary\weather_backup.html:25
+msgid "History"
+msgstr "Istorija"
+
+#: .\diary\templates\diary\weather_backup.html:26
+msgid "Astronomy"
+msgstr "Astronominės"
+
+#: .\diary\templates\diary\weather_backup.html:27
+msgid "Marine"
+msgstr "Jūrinės"
+
+#: .\diary\templates\diary\weather_backup.html:32
+msgid "Get Weather Data"
+msgstr "Gauti oro sąlygų duomenis"
+
+#: .\diary\templates\diary\weather_log_list.html:12
+msgid "Your Weather Logs"
+msgstr "Jūsų Oro Sąlygų įrašai"
+
+#: .\diary\templates\diary\weather_log_list.html:18
+msgid "Wind speed"
+msgstr "Vėjo greitis"
+
+#: .\diary\templates\diary\weather_log_list.html:19
+msgid "Wind direction"
+msgstr "Vėjo kryptis"
+
+#: .\diary\templates\diary\weather_log_list.html:20
+msgid "Waterway state"
+msgstr "Vandens kelių būsena"
+
+#: .\diary\templates\diary\weather_log_list.html:26
+msgid "You don't have any logs yet for weather."
+msgstr "Šiuo metu neturite įrašų oro sąlygoms."
 
 #: .\diary\urls.py:9
 msgid "register/"
@@ -219,39 +834,93 @@ msgstr ""
 msgid "ship/"
 msgstr ""
 
-#: .\ship_diary_dj\settings.py:65
+#: .\diary\urls.py:16
+msgid "add_ship/"
+msgstr ""
+
+#: .\diary\urls.py:17
+msgid "calendar/"
+msgstr ""
+
+#: .\diary\views.py:73
+msgid "Your account has been created! You are now able to log in"
+msgstr "Jūsų paskyra buvo sukurta! Jūs galite prisijungti"
+
+#: .\diary\views.py:106
+msgid "You are now logged out"
+msgstr "Atsijungėte"
+
+#: .\diary\views.py:120
+msgid "You are now logged in, welcome back!"
+msgstr "Prisijungėte, sveiki sugryžę"
+
+#: .\diary\views.py:124
+msgid "Invalid email or password"
+msgstr "Blogas el. paštas arba slaptažodis"
+
+#: .\diary\views.py:126
+msgid "Please correct the errors below"
+msgstr "Prašome ištaisyti klaidas"
+
+#: .\diary\views.py:507 .\diary\views.py:526
+msgid "Invalid form data"
+msgstr "Įvesta neteisingi duomenys"
+
+#: .\diary\views.py:514
+msgid "500 Internal Server Error"
+msgstr "500 vidinė serverio klaida"
+
+#: .\diary\views.py:520
+msgid "Json Decode Error"
+msgstr "Json dekodavimo klaida"
+
+#: .\diary\views.py:1031
+#, fuzzy
+#| msgid "No current data."
+msgid "No forecast data"
+msgstr "Jokios informacijos."
+
+#: .\ship_diary_dj\settings.py:83
 msgid "English"
 msgstr "Anglų kalba"
 
-#: .\ship_diary_dj\settings.py:66
+#: .\ship_diary_dj\settings.py:84
 msgid "Lithuanian"
 msgstr "Lietuviškai"
 
 #: .\ship_diary_dj\templates\base.html:8
 msgid "Ship Log"
-msgstr ""
+msgstr "Laivo Dienoraštis"
 
 #: .\ship_diary_dj\templates\base.html:16
 msgid "User:"
 msgstr "Vartotojas:"
 
-#: .\ship_diary_dj\templates\base.html:22
-msgid "Welcome to Ship Diary"
-msgstr ""
+#: .\ship_diary_dj\templates\base.html:18
+msgid "User: Unknown"
+msgstr "Vartotojas: Nežinomas"
 
-#: .\ship_diary_dj\templates\base.html:31
-#: .\ship_diary_dj\templates\base.html:35
+#: .\ship_diary_dj\templates\base.html:23
+msgid "Welcome to Ship Diary"
+msgstr "Sveiki atvykę į Laivo dienoraštį"
+
+#: .\ship_diary_dj\templates\base.html:32
+#: .\ship_diary_dj\templates\base.html:36
 msgid "Home"
 msgstr "Namai"
 
-#: .\ship_diary_dj\templates\base.html:32
+#: .\ship_diary_dj\templates\base.html:33
 msgid "Log Out"
-msgstr ""
+msgstr "Atsijungti"
 
-#: .\ship_diary_dj\templates\base.html:55
+#: .\ship_diary_dj\templates\base.html:34
+msgid "Records 'n' Notes"
+msgstr "Užrašai"
+
+#: .\ship_diary_dj\templates\base.html:75
 msgid "© 2024 Ship Diary by TFS. All rights reserved."
-msgstr "© 2024 Ship Diary. Visos teisesTFS"
+msgstr "© 2024 Ship Diary. Visos teises priklauso TFS"
 
-#: .\ship_diary_dj\urls.py:32
+#: .\ship_diary_dj\urls.py:35
 msgid "admin/"
 msgstr ""

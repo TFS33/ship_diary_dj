@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+    <hr>
+    <a href="{% url 'diary:add_engine_log' %}" >ADD LOG</a>
+<hr>
+    <h1>{% trans "Welcome" %}</h1>
+
+    {% if fuel_log %}
+        <h2>{% trans "Your Fuel Logs" %}</h2>
+
+        {% for log in fuel_log %}
+            <div class="log">
+                <h3>{{ log.ship }}</h3>
+                <p>{% trans "Current level" %}: {{ log.current_level }}</p>
+                <p>{% trans "Fuel Consumed" %}: {{ log.consumed }}</p>
+                <p>{% trans "Refilled" %}: {{ log.refilled }}</p>
+                <p>{% trans "ID" %}: {{ log.logentry_ptr_id }}</p>
+            <a href="{% url 'diary:edit_fuel_log' log_id=log.id %}">EDIT</a>
+            <a href="{% url 'diary:delete_fuel_log' log_id=log.id %}">DELETE</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>{% trans "You don't have any logs for fuel yet." %}</p>
+    {% endif %}
+<hr>
+{% endblock %}

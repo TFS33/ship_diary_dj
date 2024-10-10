@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block javascript %}
+<script src="{% static 'diary/js/save_api_to_db.js' %}"></script>
+{#    <script src="{% static 'diary/js/messages_handling.js' %}"></script>#}
+{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Marine Forecast" %}</h1>
+    <hr>
+
+
+
+    {% if error %}
+        <div style="background-color: #fd0000">
+            <del class="error">{{ error }}</del>
+        </div>
+    {% elif weather_data %}
+        <div style="background-color: #0ccece">
+            <h2 style="background-color: rgba(12,206,206,0.42)">{% trans "Weather for" %} {{ weather_data.location.name }}, {{ weather_data.location.region }}, {{ weather_data.location.country }}</h2>
+            <p>{% trans "Latitude" %}: {{ weather_data.location.lat }}, {% trans "Longitude" %}: {{ weather_data.location.lon }}</p>
+            <p>{% trans "Local Time" %}: {{ weather_data.location.localtime }}, {% trans "Time Zone" %}: {{ weather_data.location.tz_id }}</p>
+
+            <h3>{% trans "Forecast" %}</h3>
+            {% for day in weather_data.forecast %}
+                <div style="border: 1px solid #000; margin-bottom: 20px; padding: 10px;">
+                    <h4>{% trans "Date" %}: {{ day.date }} ({% trans "Epoch" %}: {{ day.date_epoch }})</h4>
+
+                    <h5>{% trans "Weather" %}</h5>
+                    <p>{% trans "Temperature" %}:
+                        {% trans "Min" %}: {{ day.mintemp_c }}°C,
+                        {% trans "Max" %}: {{ day.maxtemp_c }}°C,
+                        {% trans "Average" %}: {{ day.avgtemp_c }}°C
+                    </p>
+                    <p>{% trans "Wind" %}: {{ day.maxwind_kph }} km/h</p>
+                    <p>{% trans "Precipitation" %}: {{ day.totalprecip_mm }} mm</p>
+                    <p>{% trans "Snow" %}: {{ day.totalsnow_cm }} cm</p>
+                    <p>{% trans "Visibility" %}: {{ day.avgvis_km }} km</p>
+                    <p>{% trans "Humidity" %}: {{ day.avghumidity }}%</p>
+                    <p>{% trans "UV Index" %}: {{ day.uv }}</p>
+
+                    <h5>{% trans "Astronomical Data" %}</h5>
+                    <p>{% trans "Sunrise" %}: {{ day.astro.sunrise }}</p>
+                    <p>{% trans "Sunset" %}: {{ day.astro.sunset }}</p>
+                    <p>{% trans "Moonrise" %}: {{ day.astro.moonrise }}</p>
+                    <p>{% trans "Moonset" %}: {{ day.astro.moonset }}</p>
+                    <p>{% trans "Moon Phase" %}: {{ day.astro.moon_phase }}</p>
+                    <p>{% trans "Moon Illumination" %}: {{ day.astro.moon_illumination }}%</p>
+                    <p>{% trans "Moon Up" %}: {% if day.astro.is_moon_up %}{% trans "Yes" %}{% else %}{% trans "No" %}{% endif %}</p>
+                    <p>{% trans "Sun Up" %}: {% if day.astro.is_sun_up %}{% trans "Yes" %}{% else %}{% trans "No" %}{% endif %}</p>
+                </div>
+                <div>
+                  <form method="post" action="{% url 'diary:save_to_database_marine_api' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="forecast_data" value="{{ day.date }}">
+                        <input type="hidden" name="location_data" value="{{ weather_data.location.name }}">
+                        <button type="submit">{% trans "Save This Forecast" %}</button>
+                    </form>
+                </div>
+                <hr>
+<div id="messages-container">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+                <hr>
+
+            {% endfor %}
+        </div>
+
+    {% endif %}
+
+
+    <div style="background-color: rgb(77,203,204)">
+        <form method="post" action="{% url 'diary:marine_forecast' %}">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type="submit" value="{% trans 'Submit' %}">
+        </form>
+    </div>
+
+{% endblock %}
+

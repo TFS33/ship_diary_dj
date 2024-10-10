@@ -1,21 +1,81 @@
 {% extends "base.html" %}
 {% load i18n %}
-
+{% load static %}
 {% block content %}
+
+
     <hr>
     <div class="container_center">
-    <a href="{% url 'diary:ship' %}" class="button_ship">{% trans "SHIP"%}</a>
-    <a href="" class="button_logentry">{% trans "LOG ENTRY"%}</a>
-    <a href="" class="button_engine">{% trans "ENGINE"%}</a>
-    <a href="" class="button_fuel">{% trans "FUEL"%}</a>
-    <a href="" class="button_navigation">{% trans "NAVI"%}</a>
-    <a href="" class="button_crew">{% trans "CREW"%}</a>
-    <a href="" class="button_weather">{% trans "WEATHER"%}</a>
-    <a href="" class="button_maintenance">{% trans "MAINTENANCE"%}</a>
-    <a href="{% url 'diary:logout' %}" class="button_maintenance">{% trans "LOG OUT"%}</a>
+
+        <div class="dropdown_geeks">
+            <button class="dropbtn">SHIP</button>
+            <div class="dropdown_geeks_content">
+                <a href="{% url 'diary:ship' %}">{% trans "SHIP"%}</a>
+                <a href="{% url 'diary:add_ship' %}">{% trans "ADD"%}</a>
+                <a href="{% url 'diary:ship_logs_all' %}">View Ship Logs</a>
+            </div>
+        </div>
+
+        <div class="dropdown_geeks">
+            <button class="dropbtn">LOG ENTRY</button>
+            <div class="dropdown_geeks_content">
+                <a href="{% url 'diary:view_log_entries' %}">{% trans "LOG ENTRY"%}</a>
+                <a href="{% url 'diary:add_log_entry' %}">{% trans "ADD"%}</a>
+            </div>
+        </div>
+
+        <div class="dropdown_geeks">
+            <button class="dropbtn">ENGINE LOG</button>
+            <div class="dropdown_geeks_content">
+                <a href="{% url 'diary:add_engine_log' %}" class="button_engine">{% trans "ADD ENGINE LOG"%}</a>
+                <a href="{% url 'diary:view_engine_logs' %}" class="button_engine">{% trans "ENGINE"%}</a>
+            </div>
+        </div>
+
+        <div class="dropdown_geeks">
+            <button class="dropbtn">FUEL LOG</button>
+            <div class="dropdown_geeks_content">
+    <a href="{% url 'diary:add_fuel_log' %}" class="button_fuel">{% trans "ADD FUEL LOG"%}</a>
+                <a href="{% url 'diary:view_fuel_logs' %}" class="button_fuel">{% trans "FUEL"%}</a>
+                    </div>
+        </div>
+
+        <div class="dropdown_geeks">
+            <button class="dropbtn">NAVI</button>
+                <div class="dropdown_geeks_content">
+                    <a href="{% url 'diary:view_navi_logs' %}" class="button_navigation">{% trans "NAVI LOGS"%}</a>
+                    <a href="{% url 'diary:navigation_add' %}" class="button_navigation">{% trans "ADD NAVI"%}</a>
+                </div>
+        </div>
+
+        <div class="dropdown_geeks">
+            <button class="dropbtn">CREW</button>
+                <div class="dropdown_geeks_content">
+                    <a href="{% url 'diary:view_crew_logs' %}" class="button_crew">{% trans "CREW Logs"%}</a>
+                    <a href="{% url 'diary:add_crew_log' %}" class="button_crew">{% trans "ADD CREW"%}</a>
+                </div>
+        </div>
+
+
+        <div class="dropdown_geeks">
+            <button class="dropbtn">MAINTENANCE</button>
+                <div class="dropdown_geeks_content">
+                        <a href="{% url 'diary:view_maintenance_logs' %}" class="button_maintenance">{% trans "MAINTENANCE"%}</a>
+                        <a href="{% url 'diary:add_maintenance_log' %}" class="button_maintenance">{% trans "ADD MAINTENANCE LOG"%}</a>
+                </div>
+        </div>
+
+        <div class="dropdown_geeks">
+            <button class="dropbtn">WEATHER</button>
+                <div class="dropdown_geeks_content">
+                    <a href="{% url 'diary:view_weather_logs' %}" class="button_weather">{% trans "WEATHER"%}</a>
+                    <a href="{% url 'diary:add_weather_log' %}" class="button_weather">{% trans "ADD WEATHER LOG"%}</a>
+                </div>
+        </div>
     <a href="{% url 'diary:calendar' %}" class="button_maintenance">{% trans "Calendar"%}</a>
-    <a href="{% url 'diary:show_weather' %}" class="button_maintenance">{% trans "Weather"%}</a>
+    <a href="{% url 'diary:show_weather' %}" class="button_maintenance">{% trans "Weather API"%}</a>
     </div>
+
 <hr>
 <h1>{% trans "User home page" %}</h1>
 <h2>{% trans "Welcome" %}, {{ user.username }}!</h2>

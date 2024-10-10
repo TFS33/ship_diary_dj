@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 from django.utils import timezone
 from django.core.validators import MinValueValidator, MaxValueValidator
@@ -8,14 +10,28 @@ from diary.managers import CustomUserManager
 from django.conf import settings
 
 
+from django.db.models import Q
+
+
+def get_ship_choices(user):
+    if user.is_superuser:
+        return Ship.objects.all()
+    else:
+        return Ship.objects.filter(Q(owner=user) | Q(owner__isnull=True))
+
+
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_("email address"), unique=True)
     username = models.CharField(_("username"), max_length=100, unique=True)
     first_name = models.CharField(_("first name"), max_length=100)
     last_name = models.CharField(_("last name"), max_length=100)
     date_joined = models.DateTimeField(_("date joined"), default=timezone.now)
-    user_set_language = models.CharField(_("language"), max_length=100, choices=settings.LANGUAGES,
-                                         default=settings.LANGUAGE_CODE)
+    user_set_language = models.CharField(
+        _("language"),
+        max_length=100,
+        choices=settings.LANGUAGES,
+        default=settings.LANGUAGE_CODE,
+    )
 
     is_staff = models.BooleanField(
         _("staff status"),
@@ -60,6 +76,12 @@ class Ship(BaseModel):
         blank=True,
     )
 
+    @classmethod
+    def get_user_ships(cls, user=None):
+        if user and not user.is_superuser:
+            return Q(owner=user) | Q(owner__isnull=True)
+        return Q()
+
     def __str__(self):
         return f"{self.name} - {self.type} ({self.year_built})"
 
@@ -70,6 +92,7 @@ class LogEntry(BaseModel):
         on_delete=models.CASCADE,
         related_name="log_entries",
         verbose_name=_("Ship"),
+        limit_choices_to=Ship.get_user_ships,
     )
     timestamp = models.DateTimeField(default=timezone.now)
     notes = models.TextField(_("Notes"), blank=True)
@@ -148,9 +171,36 @@ class MaintenanceLog(LogEntry):
     work_done = models.TextField(default="Some work was done", blank=True)
     hours_worked = models.IntegerField(validators=[MinValueValidator(0)], default=0)
     minutes_worked = models.IntegerField(validators=[MinValueValidator(0)], default=0)
-    next_maintenance = models.DateTimeField(null=True, blank=True)
+    next_maintenance = models.DateTimeField(null=True, blank=True, default=datetime.now)
 
     def save(self, *args, **kwargs):
         if self.notes:
             self.notes = self.notes.capitalize()
         super().save(*args, **kwargs)
+
+
+class WeatherData(models.Model):
+    location_name = models.CharField(max_length=100)
+    location_region = models.CharField(max_length=100)
+    location_country = models.CharField(max_length=100)
+    latitude = models.FloatField()
+    longitude = models.FloatField()
+    date = models.DateField()
+    max_temp = models.FloatField()
+    min_temp = models.FloatField()
+    avg_temp = models.FloatField()
+    max_wind = models.FloatField()
+    total_precip = models.FloatField()
+    total_snow = models.FloatField()
+    avg_visibility = models.FloatField()
+    avg_humidity = models.FloatField()
+    uv_index = models.FloatField()
+    sunrise = models.TimeField()
+    sunset = models.TimeField()
+    moonrise = models.TimeField()
+    moonset = models.TimeField()
+    moon_phase = models.CharField(max_length=50)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.location_name} - {self.date}"

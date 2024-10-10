@@ -1,9 +1,26 @@
 {% extends "base.html" %}
-{%  load i18n %}
+{% load i18n %}
+{% load static %}
+
 {% block content %}
-<hr>
-    <h1>{% trans "Welcome" %}</h1>
+    <style>
+    .content-wrapper {
+        background-image: url("{% static 'diary/images/captain.webp' %}");
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        padding: 20px;
+        opacity: 70%;
+    }
+    h1 {
+        color: white;
+    }
+    </style>
 
-<hr>
-
+    <div class="content-wrapper">
+        <hr>
+        <h1>{% trans "Welcome" %}</h1>
+        <hr>
+        <!-- Add your other content here -->
+    </div>
 {% endblock %}

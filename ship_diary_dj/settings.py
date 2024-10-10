@@ -25,6 +25,24 @@ SECRET_KEY = "django-insecure-9u&n=x6#u@$769a_j$)@a!c1=s*jk-^g2!3i1$t$babv9sy=&$
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+        "file": {
+            "level": "DEBUG",
+            "class": "logging.FileHandler",
+            "filename": "debug.log",
+        },
+    },
+    "root": {
+        "handlers": ["console", "file"],
+        "level": "DEBUG",
+    },
+}
 
 # mail config
 
@@ -69,8 +87,8 @@ LANGUAGES = [
 USE_I18N = True
 USE_L10N = True
 
-LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/user_home/'
+LOGIN_URL = "/login/"
+LOGIN_REDIRECT_URL = "/user_home/"
 
 LOCALE_PATHS = (BASE_DIR / "locale",)
 
@@ -152,9 +170,9 @@ MEDIA_ROOT = BASE_DIR / "media"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 OAUTH2_PROVIDER = {
-    'SCOPES': {'calendar': 'Read/write access to Calendar'},
-    'CLIENT_ID': 'YOUR CLIENT ID',
-    'CLIENT_SECRET': 'YOUR CLIENT_SECRET',
+    "SCOPES": {"calendar": "Read/write access to Calendar"},
+    "CLIENT_ID": "YOUR CLIENT ID",
+    "CLIENT_SECRET": "YOUR CLIENT_SECRET",
 }
 
 GOOGLE_TOKEN_ROOT = BASE_DIR / "diary" / "helpers" / "credentials"
@@ -162,3 +180,14 @@ GOOGLE_TOKEN_ROOT = BASE_DIR / "diary" / "helpers" / "credentials"
 GOOGLE_TOKEN_FILE = GOOGLE_TOKEN_ROOT / "token.json"
 
 GOOGLE_CLIENT_SECRETS_FILE = GOOGLE_TOKEN_ROOT / "creds.json"
+
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "unique-snowflake",
+    }
+}
+
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'

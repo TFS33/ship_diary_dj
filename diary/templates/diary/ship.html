@@ -14,6 +14,8 @@
                 <h3>{{ ship.name }}</h3>
                 <p>{% trans "Type" %}: {{ ship.type }}</p>
                 <p>{% trans "Year Built" %}: {{ ship.year_built|default:"Unknown" }}</p>
+            <a href="{% url "diary:edit_ship" ship_id=ship.id %}">EDIT</a>
+            <a href="{% url "diary:delete_ship" ship_id=ship.id %}">DEL</a>
             </div>
         {% endfor %}
     {% else %}

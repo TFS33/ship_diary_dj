@@ -1,25 +1,32 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
 
 {% block content %}
+<h1>{% trans "Weather Information" %}</h1>
+    <div class="container_center">
+    <li><a href="{% url 'diary:get_astronomy' %}" class="button_weather">{% trans "ASTRO"%}</a></li>
+    <li><a href="{% url 'diary:get_forecast' %}" class="button_weather">{% trans "FORECAST"%}</a></li>
+    <li><a href="{% url 'diary:marine_forecast' %}" class="button_weather">{% trans "MARINE"%}</a></li>
+         </div>
 
+<h2>{% trans "Location" %}</h2>
+<p>{% trans "City" %}: {{ city }}</p>
+<p>{% trans "Latitude" %}: {{ latitude }}</p>
+<p>{% trans "Longitude" %}: {{ longitude }}</p>
 
-
-<h1>Weather for {{ location }}</h1>
-
-    <p>client location {{ client_location }}</p>
-    <p>{{ get_lock }}</p>
-    <p>{{ get_w }}</p>
-
-{#{% if weather.error %}#}
-{#    <p>Error: {{ weather.error }}</p>#}
-{#{% else %}#}
-{#    <!-- Display your weather data here -->#}
-{#    <p>Temperature: {{ weather.temperature }}°C</p>#}
-{#    <p>Condition: {{ weather.condition }}</p>#}
-{#    <!-- Add more weather details as needed -->#}
-{#{% endif %}#}
+{% if error %}
+  <p>{% trans "Error" %}: {{ error }}</p>
+{% elif weather_data %}
+  <h2>{% trans "Current Weather" %}</h2>
+  <p>{% trans "Location" %}: {{ weather_data.location.name }}, {{ weather_data.location.region }}, {{ weather_data.location.country }}</p>
+  <p>{% trans "Local Time" %}: {{ weather_data.location.localtime }}</p>
+  <p>{% trans "Temperature" %}: {{ weather_data.current.temp_c }}°C / {{ weather_data.current.temp_f }}°F</p>
+  <p>{% trans "Condition" %}: {{ weather_data.current.condition.text }}</p>
+  <p>{% trans "Wind" %}: {{ weather_data.current.wind_kph }} km/h / {{ weather_data.current.wind_mph }} mph</p>
+  <p>{% trans "Humidity" %}: {{ weather_data.current.humidity }}%</p>
+{% else %}
+  <p>{% trans "no data." %}</p>
+{% endif %}
 
 {% endblock %}
-
-

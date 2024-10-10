@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+    <hr>
+    <a href="{% url 'diary:add_weather_log' %}" >ADD LOG</a>
+<hr>
+    <h1>{% trans "Welcome" %}</h1>
+
+    {% if weather_log %}
+        <h2>{% trans "Your Weather Logs" %}</h2>
+
+        {% for log in weather_log %}
+            <div class="log">
+                <h3>{{ log.ship }}</h3>
+                <p>{% trans "Temperature" %}: {{ log.temperature }}</p>
+                <p>{% trans "Wind speed" %}: {{ log.wind_speed }}</p>
+                <p>{% trans "Wind direction" %}: {{ log.wind_direction}}</p>
+                <p>{% trans "Waterway state" %}: {{ log.waterway_state }}</p>
+            <a href="{% url 'diary:edit_weather_log' log_id=log.id %}">EDIT</a>
+            <a href="{% url 'diary:delete_weather_log' log_id=log.id %}">DELETE</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>{% trans "You don't have any logs yet for weather." %}</p>
+    {% endif %}
+<hr>
+{% endblock %}

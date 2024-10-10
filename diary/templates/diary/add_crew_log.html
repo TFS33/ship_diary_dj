@@ -3,13 +3,13 @@
 
 {% block content %}
     <div class="container_center">
-<h1>{% trans "Add Ship" %}</h1>
+<h1>{% trans "Add Crew Entry" %}</h1>
 
-        <a href="{% url 'diary:ship' %}" class="button_maintenance">{% trans "Back" %}</a>
+        <a href="{% url 'diary:view_crew_logs' %}" class="button_maintenance">{% trans "Back" %}</a>
         </div>
 <hr>
 <div class="form_container_custom_">
-<h3>input ship data</h3>
+<h3>add log entry</h3>
     <form method="post">
         {% csrf_token %}
 

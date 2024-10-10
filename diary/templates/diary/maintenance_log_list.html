@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+    <hr>
+    <a href="{% url 'diary:view_maintenance_logs' %}" >ADD LOG</a>
+<hr>
+    <h1>{% trans "Welcome" %}</h1>
+
+    {% if maintenance_log %}
+        <h2>{% trans "Your Maintenance Logs" %}</h2>
+
+        {% for log in maintenance_log %}
+            <div class="log">
+                <h3>{{ log.ship }}</h3>
+                <p>{% trans "Equipment" %}: {{ log.equipment }}</p>
+                <p>{% trans "Work done" %}: {{ log.work_done }}</p>
+                <p>{% trans "Hours worked" %}: {{ log.hours_worked }}</p>
+                <p>{% trans "Minutes worked" %}: {{ log.minutes_worked }}</p>
+                <p>{% trans "Next service" %}: {{ log.next_maintenance }}</p>
+            <a href="{% url 'diary:edit_maintenance_log' log_id=log.id %}">EDIT</a>
+            <a href="{% url 'diary:delete_maintenance_log' log_id=log.id %}">DELETE</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>{% trans "You don't have any logs yet for maintenance." %}</p>
+    {% endif %}
+<hr>
+{% endblock %}

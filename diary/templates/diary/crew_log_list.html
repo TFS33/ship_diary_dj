@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+    <hr>
+    <a href="{% url 'diary:add_crew_log' %}" >ADD CREW</a>
+<hr>
+    <h1>{% trans "Welcome" %}</h1>
+
+    {% if crew_log %}
+        <h2>{% trans "Your Crew Logs" %}</h2>
+
+        {% for log in crew_log %}
+            <div class="log">
+                <h3>{{ log.ship }}</h3>
+                <p>{% trans "Crew count" %}: {{ log.crew_count }}</p>
+                <p>{% trans "Crew changes" %}: {{ log.crew_changes }}</p>
+                <p>{% trans "ID" %}: {{ log.logentry_ptr_id }}</p>
+            <a href="{% url 'diary:edit_crew_log' log_id=log.id %}">EDIT</a>
+            <a href="{% url 'diary:delete_crew_log' log_id=log.id %}">DELETE</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>{% trans "You don't have any crew logs yet." %}</p>
+    {% endif %}
+<hr>
+{% endblock %}

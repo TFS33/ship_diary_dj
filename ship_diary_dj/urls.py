@@ -24,7 +24,10 @@ from django.views.generic import RedirectView
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', RedirectView.as_view(url='/'+settings.LANGUAGE_CODE+'/', permanent=False)),
+    path(
+        "",
+        RedirectView.as_view(url="/" + settings.LANGUAGE_CODE + "/", permanent=False),
+    ),
     path("i18n/", include("django.conf.urls.i18n")),
 ]
 

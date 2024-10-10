@@ -1,7 +1,33 @@
 {% extends "base.html" %}
 {% load i18n %}
-<h2>login</h2>
+{% load static %}
 {% block content %}
+        <style>
+    .content-wrapper {
+        background-image: url("{% static 'diary/images/captain.webp' %}");
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        padding: 20px;
+        opacity: 70%;
+    }
+    h1 {
+        color: white;
+    }
+    </style>
+
+    <div class="content-wrapper">
+
+
+
+{% if messages %}
+    <ul class="messages" id="message-container">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
 
 <div class="register_box">
     <h2>{% trans "Login" %}</h2>
@@ -15,14 +41,16 @@
             </div>
         {% endfor %}
 
-        {% if form.errors %}
-            <div class="error-messages" style="color: #ff0000;">
-                {{ form.errors }}
-            </div>
-        {% endif %}
+            {% if form.non_field_errors %}
+                <div class="error-messages" style="color: #ff0000;">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
 
         <button type="submit">{% trans "Login" %}</button>
     </form>
 </div>
+    <script src="{% static 'diary/js/messages_handling.js' %}"></script>
+    </div>
 
 {% endblock %}

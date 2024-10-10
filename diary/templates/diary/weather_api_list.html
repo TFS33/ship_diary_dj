@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+ {% if logs %}
+        <h2>{% trans "Saved Weather API Marine Data" %}</h2>
+
+        <table class="weather-data-table">
+            <thead>
+                <tr>
+                    <th>{% trans "ID" %}</th>
+                    <th>{% trans "Date" %}</th>
+                    <th>{% trans "Location name" %}</th>
+                    <th>{% trans "Location region" %}</th>
+                    <th>{% trans "Location country" %}</th>
+                    <th>{% trans "Latitude" %}</th>
+                    <th>{% trans "Longitude" %}</th>
+                    <th>{% trans "Maximal temperature" %}</th>
+                    <th>{% trans "Minimal temperature" %}</th>
+                    <th>{% trans "Average temperature" %}</th>
+                    <th>{% trans "Maximal wind" %}</th>
+                    <th>{% trans "Total precipitation" %}</th>
+                    <th>{% trans "Total snow" %}</th>
+                    <th>{% trans "Average visibility" %}</th>
+                    <th>{% trans "Average humidity" %}</th>
+                    <th>{% trans "UV Index" %}</th>
+                    <th>{% trans "Sunrise" %}</th>
+                    <th>{% trans "Sunset" %}</th>
+                    <th>{% trans "Moonrise" %}</th>
+                    <th>{% trans "Moonset" %}</th>
+                    <th>{% trans "Moon phase" %}</th>
+                    <th>{% trans "Created" %}</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in logs %}
+                    <tr>
+                        <td>{{ log.id }}</td>
+                        <td>{{ log.date }}</td>
+                        <td>{{ log.location_name }}</td>
+                        <td>{{ log.location_region }}</td>
+                        <td>{{ log.location_country }}</td>
+                        <td>{{ log.latitude }}</td>
+                        <td>{{ log.longitude }}</td>
+                        <td>{{ log.max_temp }}</td>
+                        <td>{{ log.min_temp }}</td>
+                        <td>{{ log.avg_temp }}</td>
+                        <td>{{ log.max_wind}}</td>
+                        <td>{{ log.total_precip }}</td>
+                        <td>{{ log.total_snow }}</td>
+                        <td>{{ log.avg_visibility }}</td>
+                        <td>{{ log.avg_humidity }}</td>
+                        <td>{{ log.uv_index }}</td>
+                        <td>{{ log.sunrise }}</td>
+                        <td>{{ log.sunset }}</td>
+                        <td>{{ log.moonrise }}</td>
+                        <td>{{ log.moonset }}</td>
+                        <td>{{ log.moon_phase }}</td>
+                        <td>{{ log.created_at }}</td>
+
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>{% trans "You don't have any saved logs yet." %}</p>
+    {% endif %}
+
+
+{% endblock %}
