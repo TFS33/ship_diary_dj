@@ -1028,7 +1028,7 @@ def save_weather_api_to_db(request):
                 break
 
         if forecast is None:
-            return JsonResponse({'message': _('No forecast data'), 'tags': 'error'})
+            messages.error(request, _("No forecast data"))
 
         weather_data = WeatherData(
             location_name=data_for_location,
@@ -1054,10 +1054,12 @@ def save_weather_api_to_db(request):
         )
         weather_data.save()
 
+        messages.success(request, _("Weather data saved"))
+        sleep(3)
         return redirect("diary:saved_marine_api_logs")
 
     except Exception as e:
-        return JsonResponse({'message': f"Error: {str(e)}", 'tags': 'error'})
+        messages.error(request, f"str{e}")
 
 def correcting_time(time):
     time = dt.strptime(time, "%I:%M %p")

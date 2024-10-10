@@ -32,6 +32,7 @@
                     <li><a href="{% url 'diary:user_home' %}">{% trans "Home" %}</a></li>
                     <li><a href="{% url 'diary:logout' %}">{% trans "Log Out" %}</a></li>
                         <li><a href="{% url 'diary:records' %}">{% trans "Records 'n' Notes" %}</a></li>
+                        <li><a href="{% url 'diary:saved_marine_api_logs' %}">{% trans "Saved Marine API Logs" %}</a></li>
                     {% else %}
                     <li><a href="{% url 'diary:index' %}">{% trans "Home" %}</a></li>
                     <li><a href="{% url 'diary:login' %}">{% trans "Login" %}</a></li>
@@ -43,6 +44,13 @@
 
         <div class="main">
         <h1></h1>
+        {% if messages %}
+    <ul class="messages" id="message-container">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
             {% block content %}
 
             {% endblock %}
@@ -58,10 +66,10 @@
     var zoom="3";             // initial zoom (between 3 and 18)
     var names=true;          // always show ship names (defaults to false)
 
-    // Single ship tracking
-    var mmsi="123456789";     // display latest position (by MMSI)
-    var imo="1234567";        // display latest position (by IMO, overrides MMSI)
-    var show_track=false;     // display track line (last 24 hours)
+    {#// Single ship tracking#}
+    {#var mmsi="123456789";     // display latest position (by MMSI)#}
+    {#var imo="1234567";        // display latest position (by IMO, overrides MMSI)#}
+    {#var show_track=false;     // display track line (last 24 hours)#}
 
     // Fleet tracking
     var fleet="e48ab3d80a0e2a9bf28930f2dd08800c"; // your personal Fleet key (displayed in your User Profile)
@@ -91,5 +99,6 @@
           {% endfor %}
         </select>
       </form>
+<script src="{% static 'diary/js/messages_handling.js' %}"></script>
 </body>
 </html>

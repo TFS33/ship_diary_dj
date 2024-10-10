@@ -3,6 +3,8 @@
 {% load static %}
 {% block content %}
 
+    <a href="{% url 'diary:index' %}">{% trans "HOME" %}</a>
+
  {% if logs %}
         <h2>{% trans "Saved Weather API Marine Data" %}</h2>
 
