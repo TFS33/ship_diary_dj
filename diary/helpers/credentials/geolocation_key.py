@@ -1,9 +1,9 @@
 import requests
 import json
 
-# user_ip = "188.69.184.99"
+# user_ip = "your_ip"
 #
-ABSTRACT_GEO_KEY = "a999cf07aa444a6795b90c71c3e0e5f6"
+ABSTRACT_GEO_KEY = "API_KEY"
 #
 # response = requests.get(
 #     "https://ipgeolocation.abstractapi.com/v1/?api_key=" + ABSTRACT_GEO_KEY + "&ip_address=" + user_ip)
@@ -18,8 +18,8 @@ ABSTRACT_GEO_KEY = "a999cf07aa444a6795b90c71c3e0e5f6"
 
 
 def get_location():
-    user_ip = "188.69.184.99"
-    ABSTRACT_GEO_KEY = "a999cf07aa444a6795b90c71c3e0e5f6"
+    user_ip = "IP"
+    ABSTRACT_GEO_KEY = "KEY"
 
     response = requests.get(
         f"https://ipgeolocation.abstractapi.com/v1/?api_key={ABSTRACT_GEO_KEY}&ip_address={user_ip}"
