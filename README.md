@@ -13,3 +13,5 @@ cd ship_diary_dj
 ```bash
 pip install -r requirements.txt
 ```
+
+the get yours WEATHERAPI and ABSTRACT API keys :D
